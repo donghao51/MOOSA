@@ -56,12 +56,7 @@ class HACDOMAIN(torch.utils.data.Dataset):
 
         if source:
             dom = domain[0]
-            if dom == 'animal':
-                prefix = 'ActorShift/'
-            elif dom == 'human':
-                prefix = 'kinetics600/'
-            else:
-                prefix = 'cartoon/'
+            prefix = dom + '/'
             with open(self.base_path + "HAC_Splits/HAC_%s_only_%s.csv" % (split, dom)) as f:
                 f_csv = csv.reader(f)
                 for i, row in enumerate(f_csv):
@@ -74,12 +69,7 @@ class HACDOMAIN(torch.utils.data.Dataset):
                         self.label_list.append(labels)
 
             dom = domain[1]
-            if dom == 'animal':
-                prefix = 'ActorShift/'
-            elif dom == 'human':
-                prefix = 'kinetics600/'
-            else:
-                prefix = 'cartoon/'
+            prefix = dom + '/'
             with open(self.base_path + "HAC_Splits/HAC_%s_only_%s.csv" % (split, dom)) as f:
                 f_csv = csv.reader(f)
                 for i, row in enumerate(f_csv):
@@ -92,12 +82,7 @@ class HACDOMAIN(torch.utils.data.Dataset):
                         self.label_list.append(labels)
         else:
             dom = domain[0]
-            if dom == 'animal':
-                prefix = 'ActorShift/'
-            elif dom == 'human':
-                prefix = 'kinetics600/'
-            else:
-                prefix = 'cartoon/'
+            prefix = dom + '/'
             with open(self.base_path + "HAC_Splits/HAC_%s_only_%s.csv" % (split, dom)) as f:
                 f_csv = csv.reader(f)
                 for i, row in enumerate(f_csv):
@@ -124,23 +109,6 @@ class HACDOMAIN(torch.utils.data.Dataset):
                             self.video_list.append(row[0])
                             self.prefix_list.append(prefix)
                             self.label_list.append(labels)
-
-        # for dom in domain:
-        #     prefix = dom + '/'
-        #     with open(self.base_path + "HAC_Splits/HAC_%s_only_%s.csv" % (split, dom)) as f:
-        #         f_csv = csv.reader(f)
-        #         for i, row in enumerate(f_csv):
-        #             self.video_list.append(row[0])
-        #             self.prefix_list.append(prefix)
-        #             self.label_list.append(row[1])
-
-        #     if split == 'test' and not source:
-        #         with open(self.base_path + "HAC_Splits/HAC_train_only_%s.csv" % (dom)) as f:
-        #             f_csv = csv.reader(f)
-        #             for i, row in enumerate(f_csv):
-        #                 self.video_list.append(row[0])
-        #                 self.prefix_list.append(prefix)
-        #                 self.label_list.append(row[1])
 
         self.domain = domain
         self.split = split
@@ -178,10 +146,8 @@ class HACDOMAIN(torch.utils.data.Dataset):
 
         if self.use_video:
             video_file = self.base_path + self.prefix_list[index] +'videos/' + self.video_list[index]
-            # vid = imageio.get_reader(video_file,  'ffmpeg', fps=24)
             vid = iio.imread(video_file, plugin="pyav")
 
-            # frame_num = len(list(enumerate(vid)))
             frame_num = vid.shape[0]
             start_frame = 0
             end_frame = frame_num-1
@@ -204,12 +170,9 @@ class HACDOMAIN(torch.utils.data.Dataset):
         if self.use_flow:
             video_file_x = self.base_path + self.prefix_list[index] +'flow/' + self.video_list[index][:-4] + '_flow_x.mp4'
             video_file_y = self.base_path + self.prefix_list[index] +'flow/' + self.video_list[index][:-4] + '_flow_y.mp4'
-            # vid_x = imageio.get_reader(video_file_x,  'ffmpeg', fps=24)
-            # vid_y = imageio.get_reader(video_file_y,  'ffmpeg', fps=24)
             vid_x = iio.imread(video_file_x, plugin="pyav")
             vid_y = iio.imread(video_file_y, plugin="pyav")
 
-            # frame_num = len(list(enumerate(vid_x)))
             frame_num = vid_x.shape[0]
             start_frame = 0
             end_frame = frame_num-1

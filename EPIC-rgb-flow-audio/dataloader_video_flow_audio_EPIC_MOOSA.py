@@ -38,14 +38,6 @@ class EPICDOMAIN(torch.utils.data.Dataset):
                 self.pipeline_flow = Compose(val_pipeline_flow)
 
         data1 = []
-        # for dom in domain:
-        #     train_file = pd.read_pickle(self.base_path + 'MM-SADA_Domain_Adaptation_Splits/'+dom+"_"+split+".pkl")
-
-        #     for _, line in train_file.iterrows():
-        #         image = [dom + '/' + line['video_id'], line['start_frame'], line['stop_frame'], line['start_timestamp'],
-        #                 line['stop_timestamp']]
-        #         labels = line['verb_class']
-        #         data1.append((image[0], image[1], image[2], image[3], image[4], int(labels)))
 
         if domain_name == 'source':
             source_dom1 = domain[0]
