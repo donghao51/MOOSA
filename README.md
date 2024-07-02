@@ -14,14 +14,14 @@
 
 <div>
     <h4 align="center">
-        • <a href="https://arxiv.org/abs/" target='_blank'>ECCV 2024</a> •
+        • <a href="https://arxiv.org/abs/2407.01518" target='_blank'>ECCV 2024</a> •
     </h4>
 </div>
 
 
 
 <div style="text-align:center">
-<img src="imgs/MOOSA.png"  width="95%" height="100%">
+<img src="imgs/MOOSA.png"  width="80%" height="100%">
 </div>
 
 ---
@@ -29,7 +29,7 @@
 </div>
 
 
-Our proposed MOOSA framework for Multimodal Open-Set Domain Generalization.
+Our proposed MOOSA framework for Multimodal Open-Set Domain Generalization and Adaptation.
 
 ## Code
 The code was tested using `Python 3.10.13`, `torch 2.3.1+cu121` and `NVIDIA GeForce RTX 3090`, more dependencies are in `requirement.txt`.
@@ -303,7 +303,7 @@ If you have any questions, please send an email to donghaospurs@gmail.com
 
 ## Citation
 
-If you find our work useful in your research please consider citing our paper:
+If you find our work useful in your research please consider citing our [paper](https://arxiv.org/abs/2407.01518):
 
 ```
 @inproceedings{dong2024moosa,
