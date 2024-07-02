@@ -297,6 +297,35 @@ python train_video_flow_audio_HAC_MOOSA.py --use_video --use_flow --use_audio -s
 
 </details>
 
+## Multimodal Open-Set Domain Adaptation
+### Video and Audio
+<details>
+<summary>Click for details...</summary>
+
+```
+cd EPIC-rgb-flow-audio
+```
+```
+python train_video_audio_EPIC_MOOSA_OSDA.py -s D1 D2 -t D2 --lr 1e-4 --bsz 16 --nepochs 10 --mask_ratio 0.3 --target_filter_thr 0.5 --datapath /path/to/EPIC-KITCHENS/
+```
+```
+python train_video_audio_EPIC_MOOSA_OSDA.py -s D1 D3 -t D3 --lr 1e-4 --bsz 16 --nepochs 10 --mask_ratio 0.7 --target_filter_thr 0.5 --datapath /path/to/EPIC-KITCHENS/
+```
+```
+python train_video_audio_EPIC_MOOSA_OSDA.py -s D2 D1 -t D1 --lr 1e-4 --bsz 16 --nepochs 15 --mask_ratio 0.7 --target_filter_thr 0.5 --datapath /path/to/EPIC-KITCHENS/
+```
+```
+python train_video_audio_EPIC_MOOSA_OSDA.py -s D2 D3 -t D3 --lr 1e-4 --bsz 16 --nepochs 15 --mask_ratio 0.7 --target_filter_thr 0.5 --datapath /path/to/EPIC-KITCHENS/
+```
+```
+python train_video_audio_EPIC_MOOSA_OSDA.py -s D3 D1 -t D1 --lr 1e-4 --bsz 16 --nepochs 20 --mask_ratio 0.7 --target_filter_thr 0.3 --datapath /path/to/EPIC-KITCHENS/
+```
+```
+python train_video_audio_EPIC_MOOSA_OSDA.py -s D3 D2 -t D2 --lr 1e-4 --bsz 16 --nepochs 15 --mask_ratio 0.7 --target_filter_thr 0.5 --datapath /path/to/EPIC-KITCHENS/
+```
+
+
+</details>
 
 ## Contact
 If you have any questions, please send an email to donghaospurs@gmail.com
