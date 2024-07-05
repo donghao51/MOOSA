@@ -327,6 +327,28 @@ python train_video_audio_EPIC_MOOSA_OSDA.py -s D3 D2 -t D2 --lr 1e-4 --bsz 16 --
 
 </details>
 
+
+## Multimodal Open-Partial Domain Generalization
+### Video and Audio
+<details>
+<summary>Click for details...</summary>
+
+```
+cd EPIC-rgb-flow-audio
+```
+```
+python train_video_audio_EPIC_MOOSA_Open_Partial.py -s D2 D3 -t D1 --lr 1e-4 --bsz 16 --nepochs 15 --mask_ratio 0.7 --entropy_min_weight 1.0 --datapath /path/to/EPIC-KITCHENS/
+```
+```
+python train_video_audio_EPIC_MOOSA_Open_Partial.py -s D1 D3 -t D2 --lr 1e-4 --bsz 16 --nepochs 15 --mask_ratio 0.7 --entropy_min_weight 1.0 --datapath /path/to/EPIC-KITCHENS/
+```
+```
+python train_video_audio_EPIC_MOOSA_Open_Partial.py -s D1 D2 -t D3 --lr 1e-4 --bsz 16 --nepochs 15 --mask_ratio 0.3 --entropy_min_weight 1.0 --datapath /path/to/EPIC-KITCHENS/
+```
+
+
+</details>
+
 ## Contact
 If you have any questions, please send an email to donghaospurs@gmail.com
 
