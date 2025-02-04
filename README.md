@@ -31,6 +31,8 @@
 
 Our proposed MOOSA framework for Multimodal Open-Set Domain Generalization and Adaptation.
 
+**Update**: We have a new survey paper on [Multimodal Adaptation and Generalization](https://arxiv.org/abs/2501.18592)
+
 ## Code
 The code was tested using `Python 3.10.13`, `torch 2.3.1+cu121` and `NVIDIA GeForce RTX 3090`, more dependencies are in `requirement.txt`.
 
@@ -369,10 +371,14 @@ If you find our work useful in your research please consider citing our [paper](
 
 [SimMMDG](https://github.com/donghao51/SimMMDG): A Simple and Effective Framework for Multi-modal Domain Generalization
 
+[AEO](https://github.com/donghao51/AEO): Towards Robust Multimodal Open-set Test-time Adaptation via Adaptive Entropy-aware Optimization
+
+[Survey](https://github.com/donghao51/Awesome-Multimodal-Adaptation): Advances in Multimodal Adaptation and Generalization: From Traditional Approaches to Foundation Models
+
 [MultiOOD](https://github.com/donghao51/MultiOOD): Scaling Out-of-Distribution Detection for Multiple Modalities
 
 
 
 ## Acknowledgement
 
-Many thanks to the excellent open-source projects [SimMMDG](https://github.com/donghao51/SimMMDG) and [DomainAdaptation](https://github.com/xiaobai1217/DomainAdaptation).
+Many thanks to the open-source projects [SimMMDG](https://github.com/donghao51/SimMMDG) and [DomainAdaptation](https://github.com/xiaobai1217/DomainAdaptation).
